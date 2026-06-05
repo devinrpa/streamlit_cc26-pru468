@@ -65,9 +65,7 @@ def load_data():
 try:
     df_daily = load_data()
 
-    # --- SIDEBAR (Sesuai Desain Gambar) ---
     with st.sidebar:
-        # sidebar title (no logo)
         st.title("CC26-PRU468")
         st.write("---")
         
@@ -96,11 +94,10 @@ try:
     st.markdown("**Halaman: Beranda** / Tabular")
     st.write("---")
 
-    # --- METRIC SECTION (5 Kolom seperti gambar) ---
+
     avg_val = df_filtered['Global_active_power'].mean()
     max_val = df_filtered['Global_active_power'].max()
     sum_val = df_filtered['Global_active_power'].sum()
-    med_val = df_filtered['Global_active_power'].median()
     weekday_mean = df_filtered.loc[df_filtered['day_type'] == 'Weekday', 'Global_active_power'].mean()
     weekend_mean = df_filtered.loc[df_filtered['day_type'] == 'Weekend', 'Global_active_power'].mean()
     pct_increase = ((weekend_mean - weekday_mean) / weekday_mean * 100) if pd.notna(weekday_mean) and weekday_mean else None
