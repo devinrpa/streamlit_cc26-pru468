@@ -26,6 +26,3 @@ pip install -r requirements.txt
 ```powershell
 streamlit run dashboard.py
 ```
-- Jangan commit folder `.venv` ke GitHub. Tambahkan file `.gitignore` jika perlu.
-
-Jika mau, saya bisa juga membuat `.gitignore` dan commit semuanya ke repo GitHub untukmu — mau saya buatkan?
