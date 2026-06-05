@@ -84,9 +84,6 @@ try:
         )
         
         st.write("---")
-        st.subheader("Main Menu")
-        st.button("🏠 Home", use_container_width=True)
-        st.button("📈 Progress", use_container_width=True)
 
     # Filter Logic
     df_analysis = df_daily.loc['2006':'2010'].copy()
