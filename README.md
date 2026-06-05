@@ -4,7 +4,7 @@
 Proyek ini menampilkan dashboard interaktif berbasis Streamlit untuk menganalisis konsumsi listrik rumah tangga. Analisis mencakup tren harian, perbandingan weekday vs weekend, dan distribusi konsumsi.
 
 ## Dataset
-Dataset yang digunakan: `household_daily_clean.csv` (file CSV berisi ringkasan harian dari data konsumsi listrik). Jika file ini terlalu besar, pertimbangkan menaruhnya di penyimpanan eksternal dan mengubah fungsi `load_data()` untuk membaca dari URL.
+Dataset yang digunakan: `household_daily_clean.csv` 
 
 ## Setup Environment - Anaconda
 Jika menggunakan Anaconda/Miniconda, jalankan:
