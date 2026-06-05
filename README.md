@@ -1,28 +1,41 @@
 # Analisis Konsumsi Listrik Rumah Tangga
 
-Proyek ini menampilkan dashboard Streamlit yang melakukan analisis deskriptif terhadap konsumsi listrik rumah tangga.
+## Project Overview
+Proyek ini menampilkan dashboard interaktif berbasis Streamlit untuk menganalisis konsumsi listrik rumah tangga. Analisis mencakup tren harian, perbandingan weekday vs weekend, dan distribusi konsumsi.
 
-## Ringkasan
-- Aplikasi utama: `dashboard.py`
-- Dataset: `household_daily_clean.csv` (sudah termasuk di repo jika ukurannya kecil)
+## Dataset
+Dataset yang digunakan: `household_daily_clean.csv` (file CSV berisi ringkasan harian dari data konsumsi listrik). Jika file ini terlalu besar, pertimbangkan menaruhnya di penyimpanan eksternal dan mengubah fungsi `load_data()` untuk membaca dari URL.
 
-## Setup (Windows PowerShell)
-1. Buat virtual environment dan aktifkan:
+## Setup Environment - Anaconda
+Jika menggunakan Anaconda/Miniconda, jalankan:
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate
-```
-
-2. Perbarui pip dan install dependency:
-
-```powershell
-python -m pip install --upgrade pip
+```bash
+conda create --name capstone python=3.10 -y
+conda activate capstone
 pip install -r requirements.txt
 ```
 
-3. Jalankan aplikasi Streamlit:
+## Setup Environment - Shell / Terminal
+Perintah alternatif (venv atau pipenv):
 
-```powershell
+```bash
+python -m venv .venv
+source .venv/bin/activate   # macOS / Linux
+.\.venv\Scripts\Activate  # Windows PowerShell
+pip install -r requirements.txt
+```
+
+Atau jika pakai `pipenv`:
+
+```bash
+pipenv install
+pipenv shell
+pip install -r requirements.txt
+```
+
+## Run Streamlit App
+Jalankan aplikasi dengan perintah:
+
+```bash
 streamlit run dashboard.py
 ```
