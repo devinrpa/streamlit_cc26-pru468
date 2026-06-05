@@ -91,7 +91,7 @@ try:
 
     # --- HEADER ---
     st.title("Analisis Konsumsi Listrik Rumah Tangga")
-    st.markdown("**Halaman: Beranda** / Tabular")
+    st.markdown(" ")
     st.write("---")
 
 
@@ -101,8 +101,7 @@ try:
     weekday_mean = df_filtered.loc[df_filtered['day_type'] == 'Weekday', 'Global_active_power'].mean()
     weekend_mean = df_filtered.loc[df_filtered['day_type'] == 'Weekend', 'Global_active_power'].mean()
     pct_increase = ((weekend_mean - weekday_mean) / weekday_mean * 100) if pd.notna(weekday_mean) and weekday_mean else None
-
-    m1, m2, m3, m4, m5 = st.columns(5)
+    m1, m2, m3, m4 = st.columns(4)
     
     with m1:
         st.markdown(f'<div class="metric-card"><div class="metric-icon">💰</div><div class="metric-label">Total Consumption (sum kW)</div><div class="metric-value">{sum_val:,.0f}</div></div>', unsafe_allow_html=True)
@@ -111,8 +110,6 @@ try:
     with m3:
         st.markdown(f'<div class="metric-card"><div class="metric-icon">📈</div><div class="metric-label">Average (kW)</div><div class="metric-value">{avg_val:.3f} kW</div></div>', unsafe_allow_html=True)
     with m4:
-        st.markdown(f'<div class="metric-card"><div class="metric-icon">⚖️</div><div class="metric-label">Median (kW)</div><div class="metric-value">{med_val:.3f} kW</div></div>', unsafe_allow_html=True)
-    with m5:
         st.markdown(f'<div class="metric-card"><div class="metric-icon">📅</div><div class="metric-label">Years Selected</div><div class="metric-value">{len(tahun_pilihan)}</div></div>', unsafe_allow_html=True)
 
     st.write("###")
